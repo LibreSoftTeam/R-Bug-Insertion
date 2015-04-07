@@ -1,0 +1,189 @@
+\documentclass[a4paper]{article}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+%\usepackage{html}
+%\usepackage{hthtml}
+\usepackage{geometry}
+
+% Comments (optional argument is author of comment)
+\newcommand{\comments}[2][?]{
+  \begin{quote}
+    \textbf{Comment (#1):} {\em #2}
+  \end{quote}
+  }
+
+% \name is for ``special names'', like procedure or variable names.
+\newcommand{\name}[1]{\texttt{\hturl{#1}}}
+
+% Just a shortcut for links where the url appears as footnote.
+\newcommand{\htflink}[2]{\htmladdnormallinkfoot{#1}{#2}}
+
+\title{Bug Insertion}
+\author{Gema Rodríguez Pérez}
+\date{}
+
+\sloppy
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The objective of this paper is to prove that the bug can be not caused by the previous commit. Currently, the premise establishes that all the bugs were introduced by the previous commit. We have carried out an experiment which has helped us show results pointing out a minor disagreement with the present premise. We have observed three stages totally separable throughout the execution of this experiment. The first stage considers a classification, based on our knowledge of the ticket, in three groups: 
+ 1.It is an error. 
+ 2.It is not an error. 
+ 3.Unknown. 
+ The second stage involves the analysis of it as an error. In this stage where, with some parameters of interest, we are able to give a percentage of how many prior commits were responsible for the bug. 
+The third stage is the implementation of an analytic tool to help us with the first and second stages. 
+In this paper we focus in two first stages. Explaining clearly and concisely the methodology used in our experiment. 
+
+\end{abstract}
+
+\section{The experiment}
+
+Our experiment consisted of the analysis of one hundred tickets which were taken randomly from Cinder repository. We will call the first stage ‘the filtering’ as we will classify them into three categories: 
+
+\begin{enumerate}
+    \item It is an error.
+    \item It is not an error.
+    \item Unknown
+\end{enumerate}
+
+Two different people with knowledge about programming were responsible for classifying these tickets in accordance with their opinion of the three categories mentioned above. The two people worked in parallel during the filtering. Only when all the tickets were classified were both classifications compared. Those whose classification were different, were compared with each other, thus reaching an agreed classification. 
+After filtering, we continued to the next stage, in which we only kept in mind those tickets belonging to ’It is an error’ group. In this phase we were able to conclude whether the bug was added in an earlier commit, or by contrast, if it was not. This stage is still being validated on account of a shortage of tickets analyzed. At this moment, we can design an efficient algorithm that involves relevant parameters to reach the conclusion that we are looking for. So, for the moment, we are using these parameters as a support. 
+
+
+\section{Several questions we have to answer}
+
+To provide a context, we have to answer some questions referring to the project from which we have taken the information. Likewise, we are going to describe the specific vocabulary.
+\begin{itemize}
+\item What is OpenStack?
+
+It is a combination of software tools for building and managing cloud computing platforms for public and private clouds. Principally, users deploy it as an infrastructure as a service (IaaS) solution. The technology consists of many different moving parts. In particular, OpenStack has nine key components that can be identified as part of the ”core”. Officially, OpenStack community maintained these system. 
+
+\begin{itemize}
+    \item Compute (Nova) is the primary engine of an IaaS system. It is used for deploying and managing virtual machines.
+    \item Object Storage (Swift) is a scalable redundant storage system for objects and files.
+    \item Block Storage (Cinder) manages the creation, attaching and detaching of the block devices to servers, being able to access specific locations on a disk drive.
+    \item Networking (Neutron) provides the networking capability for OpenStack managing IP addresses.
+    \item Dashboard (Horizon) is the only graphical interface to OpenStack whereby administrators gain graphical access.
+    \item Identity (Keystone) provides a central directory of users mapped to the OpenStack services that administrators and users can access.
+    \item  Image Service (Glance) provides virtual copies of services to OpenStack. It allows use of these images as templates when deploying new virtual machine instances. 
+    \item Telemetry Service (Ceilometer) 
+    \item Orchestration (Heat) helps to manage the infrastructure needed for a cloud service to run through both a REST API and a Query API.
+\end{itemize}
+
+Each one of the above has its own API to achieve integration. Furthermore, all of them have a repository where the community implements improvements; fixing bugs ... etc.
+
+
+\item How can OpenStack help us?
+
+OpenStack is is of an open nature, anyone can add additional components to OpenStack to help it to meet their needs. Because of the high scope of OpenStack we have at our disposal several bugs that we are interested in. The first of which is in Cinder. 
+
+\item What is Cinder in OpenStack?
+
+Cinder is a component of OpenStack, it works as a Block Storage manipulating volumes and snapshots. Cinder has a Data Base in which the state of each volume can be found.
+At the same time, Cinder is composed of:
+
+\begin{itemize}
+    \item Cinder API: Accepts orders and routes them to cinder volume.
+    \item Cinder Volume: Reacts to these requests, writing or reading the database. Furthermore, it interacts with other processes such as cinder Scheduler through the message queue. Also acts directly upon storage, providing hardware or software.
+    \item Cinder Schedule: Selects the node to storage and volume where created.
+\end{itemize}
+
+\item What would we like to achieve by analyzing this repository?
+
+Analyzing Cinder repository we would like obtain a percentage of how many errors have been inserted by the previous commit. Owing to the fact that the actual premise assumes that the error was introduced by previos commit.
+It is important to be able to demonstrate that existing others factors contribute to the appearance of these errors. 
+
+\item What do we have to analyze in this repository
+
+We need to be able to analyze a set of true tickets which will help us to reach the desired conclusion. Firstly, we have chosen a repository from Cinder, where we can find a wide group of tickets. These tickets have a state of progress, it is an updating of its status from opening the ticket until closing.  We only are interested in closed ticket and its releas patch,  that is, whose status is “Fix released” or “Fix Commited”.
+Before reaching the goal, we have to answer intermediate questions which provide us with information throughout the analysis. 
+First of all, we must be clear in what we will analyze and where we can find the necessary data for this analysis. So, the first questions are:
+
+
+\item What is a ticket?
+
+We call a ticket each of the entries that are published in \url{https://bugs.launchpad.net/cinder}, describing a bug. The purpose is to leave a written a evolution of the bug from its opening until it is fixed.
+
+
+\item Where will we find a ticket?
+
+The ticket are found in \url{https://bugs.launchpad.net/cinder}, where we must do an advanced search with a main search parameter called ”status" as:
+\begin{itemize}
+    \item Fix Committed: the changes are pending, and to be uploaded soon.
+    \item Fix Released: a fix was uploaded to an official Cinder repository.
+\end{itemize}
+
+The next stage is to choose a random ticket and analyze it. Trying to answer the following questions until arriving at our objective. To answer the main questions, from the first level; we need to ask questions at the second level.
+The main questions are:
+\begin{itemize}
+    \item Is it a Bug?
+    \item Can we identify the commit responsible for the bug?
+    \item Is the previous commit responsible?
+\end{itemize}
+
+As we have mentioned before, to answer the main questions we need to answer other questions like the following:
+
+\item What do the title, the description and the commits of a ticket represent?
+
+Once determined, we choose a ticket, we must to read carefully the title and the description of the ticket as well as the title of the commit which fixed the patch, because this is where will obtain more information from.
+
+The title and the description of the ticket whose id is 'n\_ticket' can be found in \url{https://bugs.launchpad.net/cinder/+bug/n_ticket}. The title of the commit can, sometimes be found in the same link under the comment “Fix merged to cinder (master)”, where we can find link leads to the review of the ticket \url{https://review.openstack.org/#/c/n_review}. In the review all the information about the patch that fixed the bug is shown.
+
+After analyzing these three fields,  we should note the keywords of each of them, because in our opinion, they will help us in the future to develop an algorithm. Understanding keywords as those words that show the same pattern or are specific will help us with the classification. In addition, very often (We must calculate the percentage from the experiment), the description helps us to answer the question: Is it a bug?.
+
+At this stage, we are almost ready to answer the first question, Is it a bug?, Before that, we must be clear about the criteria that we will use. 
+
+\item What criteria will be used?
+
+We need to define certain criteria that must be followed in case of doubt about it being a bug or not. We have based the answer on the following criteria:
+
+\begin{itemize}
+    \item Are there only test files?
+    It is not an error. Our criteria indicate that test files will not be analyzed because we consider these files indispensable when a feature is implemented. With a test file the working order of the program is checked, in a way to give consistency to the program. A bug in the code, implicates there being a bug in the test file, provided that the test are implemented. So, we are not interested in these files.
+    \item Does the title of  the ticket describe a new feature?
+It is not an error. New features are not considered errors, because there is no failure. The optimization, deletion of a dead code or new characteristics to users are involved here.
+    \item Does the title of the ticket describe the program as not working as expected?
+It is an error. Sometimes the error is not in a main function which prevents Cinder from working, because a developer has considered it  an important error, although not relatively important. But it is not working as he/she expected.
+    \item Does the title of the ticket describe that updates are required?
+It is an error.  We consider all tickets that require updating as errors, because if it is not updating  cinder is not operating as expected and will cause errors.
+\end{itemize}
+
+Sometimes we are unable to answer all the questions due to having insufficient data or because of the complexity of the issue.
+
+At this time, we should be able to classify the tickets according to their nature as:
+\begin{enumerate}
+    \item It is an error.
+    \item It is not an error.
+    \item Unknown
+\end{enumerate}
+
+In the experiment, we only have focused in the ‘It is an error’ group, as this is the ticket group that interests us.
+
+Now the more difficult part begins. Commits will be focused on,  having to identify which lines have been removed, modified or added in each of them. Also we should know in which files are the answers to the question about who is responsible.
+
+As before, to answer these questions we need to answer some questions from lower levels:
+
+Sometimes, after having read the description of the ticket, we know if the ticket is an upgrade error. In this case, the answer to the question Is there a bug responsible? is negative. That is, according to our criteria nobody is responsible for the evolution of the code. Therefore, if an update is necessary, despite being an error there is no commit responsible for the  bug.
+
+In other cases, after the description we can conclude that we are unable to identify a responsible commit, because the ticket includes more than one component within OpenStack and although it has been opened in Cinder could have been closed in another repository that belongs to another component of OpenStack. Therefore we do not have a review where we analyze the code and identify the commit responsible.
+
+If the ticket is not in any of the above situations, we must be able to answer the next questions by analyzing the code of the files. These codes can be found in the review page of each ticket.  If you click on the file involved,  a comparison between the status of the file before commit and the status of the file after the commit appears.
+ 
+\item What kind of code is it?
+
+\item What number of commits are involved?
+
+\item What will happen if the number of folders is greater than one? 
+
+\item Is it only the previous commit that is involved?
+
+\item Is this the commit responsible?
+\end{itemize}
+
+\section{The results}
+
+\section{Conclusions}
+
+\end{document}
