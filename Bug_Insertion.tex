@@ -89,7 +89,6 @@ The experiment consists of two stages in which two different persons with knowle
 \subsection{First Stage}
 The first stage considers a classification, based on our knowledge about the ticket we have analyzed, in three groups: 1. When we are sure that the ticket it is an error. 2.When we are sure that the ticket it is not an error. 3.When we have doubts about how classify the ticket, it is hardly classifiable. Henceforth, we will refer to group 1 as 'Error', group 2 as 'Not Error' and group 3 as 'Undecided'. In OpenStack, bugs reports for a project are generally tracked on Launchpad of this project, so in our case, we extracted the bugs reports from Launchpad Cinder at https://bugs.launchpad.net/cinder. Bugs reports with different status' are being found at this Launchpad, but we only are interested in tickets whose states are 'Fix Committed' or 'Fix Released' because only in these cases the changes in the code are visible. Each ticket has an id unique at Launchpad, and with this id we can see all the information about the bug. 
 
-
 First of all, we must be clear in what we will analyze from the ticket that will help us to classify them. We must carefully read the title and the description of the ticket as well as the title of the commit which fixed the patch, because this is where we will obtain important information to decide to which group it belongs. Each ticket has an id unique at Launchpad, we will refer to it as 'n\_ticket', and with this id we can see all information about the bug at  \url{https://bugs.launchpad.net/cinder/+bug/n_ticket}. The title of the commit can, sometimes be found in the same link under the comment 'Fix merged to cinder (master)'. OpenStack provide us a Web interface for the Gerrit Code Review system to see proposed changes, and review them at \url{https://review.openstack.org/ }, specifically we will find this code review to each 'n\_ticket' at \url{https://review.openstack.org/#/c/n_review}, where 'n\_review' is the review unique id of each 'n\_ticket'. In the review code all the information about the patch that fixed the bug is shown.
 
 We need to define certain criteria that must be followed in case of doubt about it being a bug or not. We have based the answer on the following criteria: 
@@ -176,10 +175,11 @@ It is now that we are ready to answer the request 2 and request 3 showing a perc
 
 The figure~\ref{fig:secondStage} shows the percentage of each group depending on how many commits have been implicated in the ticket. 'More than one commits' is referring to the number of independent commits without considering tickets.
 
-[I have another graph where the responsibility in 'More than one commit' depend on the degree of responsibility of each commit inside a ticket
+[Another graph  figure~\ref{fig:degree}  shows the responsibility in 'More than one commit' depend on the degree of responsibility of each commit inside a ticket
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{prueba}
+\includegraphics[width=0.5\textwidth]{prueba} 
+\caption{Degree of responsibility in more than one commit} \label{fig:degree}
 \end{figure}
 ]
 
