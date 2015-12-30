@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.12.9)  18 DEC 2015 12:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.12.9)  30 DEC 2015 11:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -317,65 +317,64 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 53.
+(Font)              <7> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 53.
+(Font)              <5> on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 52.
 
 [1
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<Arquitectura.png, id=9, 699.61375pt x 358.33875pt>
+<Arquitectura.png, id=12, 699.61375pt x 358.33875pt>
 File: Arquitectura.png Graphic file (type png)
  <use Arquitectura.png>
 Package pdftex.def Info: Arquitectura.png used on input line 82.
-(pdftex.def)             Requested size: 222.19429pt x 113.81102pt.
+(pdftex.def)             Requested size: 388.85602pt x 199.16928pt.
 
-[2 <./Arquitectura.png>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 97.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 97.
- <index.png, id=18, 974.64125pt x 1064.97874pt>
+Overfull \hbox (45.57353pt too wide) in paragraph at lines 82--83
+ [][] 
+ []
+
+[2 <./Arquitectura.png>] <index.png, id=20, 1284.8pt x 1183.42125pt>
 File: index.png Graphic file (type png)
 
 <use index.png>
 Package pdftex.def Info: index.png used on input line 101.
-(pdftex.def)             Requested size: 260.39049pt x 284.52756pt.
- [3] [4 <./index.png>] (./referenc.tex
+(pdftex.def)             Requested size: 308.88762pt x 284.52756pt.
+ [3] [4 <./index.png>] (./referenc.tex [5]
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
 Missing character: There is no Ã in font cmr9!
 Missing character: There is no Ÿ in font cmr9!
- [5]) [6]
-(./latexFormat.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) [6]
+(./latexFormat.aux) ) 
 Here is how much of TeX's memory you used:
- 2447 strings out of 495000
- 32870 string characters out of 6181169
+ 2446 strings out of 495000
+ 32863 string characters out of 6181169
  99974 words of memory out of 5000000
- 5654 multiletter control sequences out of 15000+600000
+ 5653 multiletter control sequences out of 15000+600000
  7970 words of font info for 29 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,7n,23p,889b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmtt9.pfb>
-Output written on latexFormat.pdf (6 pages, 257633 bytes).
+ 38i,7n,23p,688b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt9.pfb>
+Output written on latexFormat.pdf (6 pages, 251416 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
+ 68 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
