@@ -177,6 +177,9 @@ D2 and D3  \kern 1pc & (41/62) 66\%\kern 1pc & (10/10) 100\%\kern 1pc  & - \kern
 \end{tabular} }
 \end{center}
 \end{table}
+
+The table ~\ref{tab:2} shows that the concordance of the developers is high but, also demonstrate the difficulty to classify tickets as bug report or as not bug report, because each developer can have different ideas about a specific ticket. The concordance between the developers could be higer if they were expert in the project.
+ 
 All the data is available in the repositories of github's account of the developers \footnote{\url{https://github.com/Gemarodri}}\footnote{\url{https://github.com/ddalipaj}}\footnote{\url{https://github.com/nellysek}}, these repositories has the same name that the projects analyzed in OpenStack.
 
 %\section{Discussion}
@@ -189,12 +192,13 @@ All the data is available in the repositories of github's account of the develop
 %\end{enumerate}
 
 
-%\subsection{Future Work}
-%\label{sec:5.1}
+\subsection{Future Work}
+\label{sec:5.1}
 
 %We would like know what grade of responsibility, none or totally, practice the previous commit in the seeding of a bug in OpenStack, considering that currently exists an implicit assumption: the line that contains the error was caused by the immediately previous commit\cite{Sliwerski}. The accuracy in our results depends on the quality of the data, thus we should focus only on bug reports discarding the other issues.
 
 %The next step in the tool is implement the part in where we analyzed the previous commit, displaying the code after and before the bug fixed and after and before the bug-introduction to determinate if the previous commit is responsible or not.
+Future extensions of this tool includes extract information from others systems as Bugzilla or GitHub and study the misclassification in this projects. Also, display to users more information such as the status of the files affected in the fix commit after and before the bug-introducing. Futhermore, we would like to implement an auto classificator based on the semantic of the issue description and fix-commit description to help developers, showing a first idea about whereas the issue belongs to bug report or not, but the developer always has the last decission. After manually analyzing more than 400 tickets, we have seen clear cases of issues that were bug report, which have similar sentences in the description, so the automatic classification will allow developers to focus only on problematic issues, where it can be easily misclassification.
 
 
 \input{referenc}
