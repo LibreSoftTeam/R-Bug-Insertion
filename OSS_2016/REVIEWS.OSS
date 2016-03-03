@@ -1,0 +1,97 @@
+----------------------- REVIEW 1 ---------------------
+PAPER: 16
+TITLE: BugTracking: A tool to assist in the Bug Triage Process.
+AUTHORS: Gema Rodriguez, Jesus M. Gonzalez-Barahona, Gregorio Robles, Sekitoleko Nelson and Dalipaj Dorealda
+
+
+----------- REVIEW -----------
+The tool presented is interesting and I think it could be useful in the community.
+The tool has been validated in a small setting demonstrating the usefulness. I think it will be a very interesting demo session.
+
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 16
+TITLE: BugTracking: A tool to assist in the Bug Triage Process.
+AUTHORS: Gema Rodriguez, Jesus M. Gonzalez-Barahona, Gregorio Robles, Sekitoleko Nelson and Dalipaj Dorealda
+
+
+----------- REVIEW -----------
+The paper is nicely written but it targets the content of the conference only marginally.
+Moreover, the software engineering component of the paper is correct but of limited scope - the specific, original contribution of the proposal with respect to the state of the art is hard to recognise. No solid experimentation is supplied on the performance of this tool versus existing commercial or open source solutions.
+
+
+----------------------- REVIEW 3 ---------------------
+PAPER: 16
+TITLE: BugTracking: A tool to assist in the Bug Triage Process.
+AUTHORS: Gema Rodriguez, Jesus M. Gonzalez-Barahona, Gregorio Robles, Sekitoleko Nelson and Dalipaj Dorealda
+
+
+----------- REVIEW -----------
+In their paper the authors present a tool aimed at researchers who want to identify which issues in issue trackers that are bug reports. Hence, the tool performs integration of multiple data sources in a web based application in order to provide decision support in the process of manually identifying which issues that are actually bug reports.
+
+Reported shortcomings of earlier approaches for identification of bug reports indicates that there is a need for the described tool, and that it can be useful for researchers working with data from issue trackers. 
+
+There are some issues with the paper. 
+
+First, The most obvious one being the language. The paper is riddled with linguistic mistakes (beyond typos), making a number of statements almost incomprehensible. It is recommended that some serious proof-reading is performed, preferrably by someone who is native in English. At the end of this review there are some suggestions for improvements, but there may be more language issues.
+
+Second, It is a bit unclear what the more specific novelty with the tool. It is understood that it integrates several data sources and presents information to the researcher in the web interface, but does it operate under some more specific "philosophy" beyond being an tool that collects and integrates information at the same place?
+
+Third, it is understood that the current version of the tool is limited to Openstack projects/services and with the server operating against Launchpad and Gerrit. How well can the tool support other OSS projects through use of other kinds of repositories. This is hinted in 3.1 (Future work).
+
+Fourth, the test of the tool in section 3 involves three developers use of the tool in order to identify which issues are perceived as bug reports. My concern (or observation) is that it is not obvious that the results primarily are connected to the tool (but rather use of the tool), i.e. it could be claimed that the actual object(s) of study are the developers and how similarly the perceive issues being bug reports. What would the results look like if the tool was not used (but rather the data sources in isolation) or some other possible tool? I am not saying that the test/investigation is without value, but I think this should be discussed somewhere in the paper.
+
+
+
+Some less major things:
+
+There are three styles specifying authors in the reference list. Make it uniform and conformant with the Springer conference paper requirements. Do not use "et al." in reference list, list all authors. For references 1 and 2 the source is not specified.
+
+Overall: "decision" instead of "decission"
+
+Abstract, para 2: "..., but for example..." instead of "..., but for examples..."
+
+Abstract: "...makes their decision process much more reliable..." instead of "...makes much more reliable their decision process ..."
+
+Intro, second sentence: "Developers and testers report..." instead of "Developers and tester report...". Same sentence: "...issue-tracking systems" instead of "...issue-tracking system"
+
+Intro, para 2: "...difficulty of distinguishing..." instead of "...difficulty of distinguish...".
+
+Intro, para 4: "Linking a bug report..." instead of "Linking a bug reports...", same sentence "...may not be a..." instead of "...may be not a...". Same para: "...the Mlink approach..." instead of "...Mlink approach...". Same para: it is unclear what "them" refers to in the sentence "But all of them suppose that the issues are bug reports."
+
+Section 2, first sentence "...a browser..." instead of "...the browser...".
+Same para: suggest "..., and can thereby explain their decision for each ticket." instead of "..., could explain their decisions in each ticket."
+
+The concept of a "ticket" should explaind first time it is mentioned (section 2)
+
+2.1 second sentence: it is a bit misleading to write that "image 1 presents the architecture used, which has been developed with JavaScript, Node, JQuery and HTML5 technologies.". It is probably not the architecture that has been developed using these technologies, but rather the software is based on the architecture presented in Figure 1.
+
+2.2 second para: "...its corresponding review..." instead of "...its correspondent review...". The two subsequent sentences are very strange and hard to understand, should really be rephrased for clarity.
+
+2.2 para 4: The concept of "double bind analysis" should be explained. Same sentence: "...since the data is saved..." instead of "...due to the data is saved...". Same para: "...to all information of..." instead of "...the whole information of...". Same para: "...developer spends on the analysis" instead of "...developer spend in the analysis". Same sentence: "...help us in understanding the current problem of issue misclassification." instead of "...help us understanding the current problem of issues misclassification."
+
+2.2 para 5: suggestion: "The web page provides different functionalities depending on in which tab we are. Next we explain these functionalities." instead of what there is now.
+
+Enumerated list, option 1: it says "...in which there is more activity...", more in relation to what? 
+
+option 2: "...showed in Figure 2..." instead of "...showed in 2..." ???
+Same option: "selects/inserts" instead of "select/insert". Same option: "...ticket is..." instead of "...ticket are...".
+
+option 3: "...after analyzing..." instead of "...after analyze...". Language needs to be improved in remainder of option 3.
+
+2.2 last para: suggest "...at a GitHub page..." instead of "...in my GitHub account". Next sentence: "...regardless of having a GitHub..." instead of "...regardless of have GitHub...".  Language needs to be improved in remainder of this para.
+
+Section 3 para 1: "...show the percentage of each developer..." sounds very strange. Percentage of what? I guess it is percentage of issues classified as bug reports for the different developers?
+
+Section 3 para 3: "...that each ticket..." instead of "...that each tickets..."
+Same para: "Table 2 shows the percentage..." instead of "The table 2 show the percentaje...".  
+
+Discuss (more clearly) why results are not reported in Table 2 for combinations "D1 and D3" for Nova, "D2 and D3" for Horizon, and "D1 and D2" & "D2 and D3" for Neutron.
+
+Section 3 para 4: "Table 2 shows..." instead of "The table 2 shows...". Same para: "higher" instead of "higer", "experts" instead of "expert"
+
+Section 3 para 5: "...is available in the GitHub repositories of the developers..." instead of what it says now. Same para: "these repositories have..." instead of "these repositories has..."
+
+Section 3.1: "classifier" instead of "classificator". "decision" instead of "decission" (search the document). "...that were bug reports..." instead of "...that were bug report...". This section needs to be linguistically improved. Maybe the final subordinate clause should read ", which can be easily misclassified" ?
+
+Generally, figures should be referred to as "Figure", not as "image".
