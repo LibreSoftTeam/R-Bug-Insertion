@@ -54,7 +54,7 @@
 \begin{abstract}
 	In most software projects, but in particular in almost all free, open source software projects, issue tracking systems are used for recording many different kinds of issues: bug reports, feature requests, maintenance tickets, and even design discussions. Identifying which of those issues are bug reports, is not a trivial task. When researchers want to conduct some study on the bug reports managed by a software development project, they need to first of all to perform this identification.\\
 
-The job for researchers here is very different from the bug triaging that developers do. In the latter case, people with a lot of experience in the project make a decission based on the information available at that time (maybe just a short comment by some user), asking if needed for more details. In the former case, researchers are usually not that experienced in the project, but they have at their disposal all the information produced, until the moment the issue was closed. This may include not only all comments and actions on the issue tracking system, but for examples, discussions about a fix in the code review system, or the final fixing patch in the source code management system. Having all that information conveyed to the researchers in an easy, flexible and quick way accelerates and makes much more reliable their decision making process. This simplifies large scale manual analysis of issues (in the hundreds or thousands), helping researchers to ensure that they are really working with what they intend to work: bug reports.\\
+The job for researchers here is very different from the bug triaging that developers do. In the latter case, people with a lot of experience in the project make a decision based on the information available at that time (maybe just a short comment by some user), asking if needed for more details. In the former case, researchers are usually not that experienced in the project, but they have at their disposal all the information produced, until the moment the issue was closed. This may include not only all comments and actions on the issue tracking system, but for examples, discussions about a fix in the code review system, or the final fixing patch in the source code management system. Having all that information conveyed to the researchers in an easy, flexible and quick way accelerates and makes much more reliable their decision making process. This simplifies large scale manual analysis of issues (in the hundreds or thousands), helping researchers to ensure that they are really working with what they intend to work: bug reports.\\
 
 This paper presents a tool designed exactly to solve this problem of providing the researcher with all the relevant information needed to decide if an issue corresponds to a bug report or not. The tool uses information extracted automatically from the project repositories, and offers a web-based interface which allows for collaboration, traceability and transparency of the identification of bug reports, making the process easier, faster, and more reliable.
 \end{abstract}
@@ -78,7 +78,7 @@ In this paper, we present a tool to display all the data necessary to the develo
 \section{The tool}
 \label{sec:2}
 
-The tool works in the browser, displaying the main characteristics to distinguish bug report from others. Developers will be responsible to classify the tickets as bug report or not, could explain their decissions in each ticket.
+The tool works in the browser, displaying the main characteristics to distinguish bug report from others. Developers will be responsible to classify the tickets as bug report or not, could explain their decisions in each ticket.
 
 
 \subsection{Architecture}
@@ -97,7 +97,7 @@ This tool works with Launchpad as issue-tracking system and Gerrit as code revie
 \label{sec:2.2}
 The tool shows the id of the tickets, which are extracted randomly from each issue-tracking repository of OpenStack, and displays the information necessary to decide whether the issue is a bug report or not. We focused in display the main parameters that help in the classification, such as the title of the report and the description as well as the description of the fix commit.
 
-The left side in the image \ref{fig:2}, shows the information related with the ticket in Launchpad and its correspondent review in Gerrit. Some information displayed link with the original webpages in Launchpad and Gerrit, thereby the developers have at their disposal extra information such as the comments that other developers have done. Could tracking the history since the ticket opens until the commit fixed the ticket.
+The left side in the image \ref{fig:2}, shows the information related with the ticket in Launchpad and its correspondent review in Gerrit. Some information displayed link with the original web pages in Launchpad and Gerrit, thereby the developers have at their disposal extra information such as the comments that other developers have done. Could tracking the history since the ticket opens until the commit fixed the ticket.
 
 The right side is guided to user's opinion, after reading all the information displayed, they have to classify the ticket as \textit{Bug report} or \textit{Not Bug report}. Due to unsophisticated description used in the ticket, the developers could doubt in the classification, for this reason we add an extra option in the classification, \textit{Undecided}. Furthermore, the developers have a textarea to write their opinion about their classification in each ticket, as well as other textareas to write the keywords found in the title and the description which can help us building an automatic classification system in the future.
 
@@ -110,15 +110,15 @@ The tool allow carry out a double bind analysis, due to the data is saved in a f
 \label{fig:2}       % Give a unique label
 \end{figure}
 
-The webpage provide us different functionalities depend on in which tab we are, next we explain these functionalities.
+The web page provide us different functionalities depend on in which tab we are, next we explain these functionalities.
 \begin{enumerate}
   \item Tab Repository: In this tab we choose which repository of OpenStack we want analyze. Currently the tool supports the four principal repositories: Cinder, Nova, Neutron and Horizon, in which there is more activity.
-  \item Tab Analyze: Is the Tab showed in \ref{fig:2} where the user select/insert an identifyer of a ticket and analyze with all the data displayed if the ticket are a bug report or not.
+  \item Tab Analyze: Is the Tab showed in \ref{fig:2} where the user select/insert an identifier of a ticket and analyze with all the data displayed if the ticket are a bug report or not.
   \item Tab Statistics: This tab collects the data saved in the user's repository in GitHub after analyze each ticket, and displays a table with the number of tickets classified as \textit{Bug Report},\textit{Not Bug Report} and \textit{Undecided} in the repository and from each developer involved in the analysis, which name has to be selected previously.
   \item Tab Modify: In this tab, the user can see all his data saved in the GitHub repository and modify the content of the file that he wants, in case of have inserted a mistake during the analysis.
 \end{enumerate}
 
-We continue developing the tool but an initial version is available\footnote{\url{bugtracking.libresoft.es}}, as well as a demonstration video\footnote{\url{https://www.youtube.com/watch?v=q0-TIvL4mqc&feature=youtu.be}}. It presents a licence type GPL 0 (General Public License) and you can find the code in my GitHub account\footnote{\url{https://github.com/Gemarodri/BugTracking}}. Anyone can use it regardless of have GitHub account or not. But, the ones with GitHub account are the only ones that can save and modify their data, in addition, one of the requirements to save and modify data is create a new repository with the same name that the repository of OpenStack which you want to analyze.
+We continue developing the tool but an initial version is available\footnote{\url{bugtracking.libresoft.es}}, as well as a demonstration video\footnote{\url{https://www.youtube.com/watch?v=q0-TIvL4mqc&feature=youtu.be}}. It presents a license type GPL 0 (General Public License) and you can find the code in my GitHub account\footnote{\url{https://github.com/Gemarodri/BugTracking}}. Anyone can use it regardless of have GitHub account or not. But, the ones with GitHub account are the only ones that can save and modify their data, in addition, one of the requirements to save and modify data is create a new repository with the same name that the repository of OpenStack which you want to analyze.
 
 %\section{Validation Study}
 %\label{sec:3}
@@ -136,14 +136,14 @@ We continue developing the tool but an initial version is available\footnote{\ur
 
 %Henceforth, we will refer to Group 1 as \textit{Bug Report}, Group 2 as \textit{not Bug Report} and Group 3 as \textit{Undecided}.
 
-%To validate the tool three different developers analyzed tickets belongs to the four main repositories. The developers analyzed more than four hundred tickets to can probe than the tool work as them expected, clasifiying the tickets into one of the three groups and corroborating that the issues reports present misclassification as ~\cite{Herzig} mencioned.
+%To validate the tool three different developers analyzed tickets belongs to the four main repositories. The developers analyzed more than four hundred tickets to can probe than the tool work as them expected, classifying the tickets into one of the three groups and corroborating that the issues reports present misclassification as ~\cite{Herzig} mentioned.
 
-%In the analysis, some of the tickets present a double bind review process, obtaining that each tickets was analyzed by two developers. %Each developer analyzed 167 tickets plus the half tickets of his teammates. %Only at the end, they disscused the classification conflicts to reach an agreement.
+%In the analysis, some of the tickets present a double bind review process, obtaining that each tickets was analyzed by two developers. %Each developer analyzed 167 tickets plus the half tickets of his teammates. %Only at the end, they discussed the classification conflicts to reach an agreement.
 
 \section{Results}
 \label{sec:4}
 
-We have manually analyzed 459 different tickets with support of the present tool, 125 from Cinder, 125 fron Nova, 125 from Horizon and 84 from Neutron. The table ~\ref{tab:1} show the percentage of each developer after analyzing the tickets, 417 tickets were analyzed by two different developers, 
+We have manually analyzed 459 different tickets with support of the present tool, 125 from Cinder, 125 from Nova, 125 from Horizon and 84 from Neutron. The table ~\ref{tab:1} show the percentage of each developer after analyzing the tickets, 417 tickets were analyzed by two different developers, 
 \begin{table}[htb]
 \begin{center} {\footnotesize
 \caption{ Classification statistics of each developer}
@@ -159,9 +159,9 @@ Developer 3 \kern 1pc & (188) 56\% & (116) 35\% & (30) 9\% & 334 \\
 \end{center}
 \end{table}
 
-The percentages between Developer 1 and Developer 3 are really similar, whereas the Developer 2 has identifyed more Bug Reports in his analysis. But, the three results support the missclassification present in bug tracking systems. Futhermore, according to ~\cite{Herzig}'s work, approximately two of five issues are misclassified in the analysis of Developer 1 and Developer 3.
+The percentages between Developer 1 and Developer 3 are really similar, whereas the Developer 2 has identified more Bug Reports in his analysis. But, the three results support the misclassification present in bug tracking systems. Furthermore, according to ~\cite{Herzig}'s work, approximately two of five issues are misclassified in the analysis of Developer 1 and Developer 3.
 
-Focusing in the concordance between developers analyzing the same ticket, 417 tickets present a double bind review process, obtaining that each tickets was analyzed by two developers. The table ~\ref{tab:2} show the percentaje of concordance between developers in each repository after the analysis of the tickets. Some repositories do not present double bind between two of developers.
+Focusing in the concordance between developers analyzing the same ticket, 417 tickets present a double bind review process, obtaining that each tickets was analyzed by two developers. The table ~\ref{tab:2} show the percentage of concordance between developers in each repository after the analysis of the tickets. Some repositories do not present double bind between two of developers.
 
 \begin{table}[htb]
 \begin{center} {\footnotesize
@@ -198,7 +198,7 @@ All the data is available in the repositories of github's account of the develop
 %We would like know what grade of responsibility, none or totally, practice the previous commit in the seeding of a bug in OpenStack, considering that currently exists an implicit assumption: the line that contains the error was caused by the immediately previous commit\cite{Sliwerski}. The accuracy in our results depends on the quality of the data, thus we should focus only on bug reports discarding the other issues.
 
 %The next step in the tool is implement the part in where we analyzed the previous commit, displaying the code after and before the bug fixed and after and before the bug-introduction to determinate if the previous commit is responsible or not.
-Future extensions of this tool includes extract information from others systems as Bugzilla or GitHub and study the misclassification in this projects. Also, display to users more information such as the status of the files affected in the fix commit after and before the bug-introducing. Futhermore, we would like to implement an auto classificator based on the semantic of the issue description and fix-commit description to help developers, showing a first idea about whereas the issue belongs to bug report or not, but the developer always has the last decission. After manually analyzing more than 400 tickets, we have seen clear cases of issues that were bug report, which have similar sentences in the description, so the automatic classification will allow developers to focus only on problematic issues, where it can be easily misclassification.
+Future extensions of this tool includes extract information from others systems as Bugzilla or GitHub and study the misclassification in this projects. Also, display to users more information such as the status of the files affected in the fix commit after and before the bug-introducing. Furthermore, we would like to implement an auto classifier based on the semantic of the issue description and fix-commit description to help developers, showing a first idea about whereas the issue belongs to bug report or not, but the developer always has the last decision. After manually analyzing more than 400 tickets, we have seen clear cases of issues that were bug report, which have similar sentences in the description, so the automatic classification will allow developers to focus only on problematic issues, where it can be easily misclassification.
 
 
 \input{referenc}
